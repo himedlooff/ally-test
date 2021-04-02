@@ -63,6 +63,19 @@
             color: #000;
             /*Set to match the Tailwind colour you want the active one to be */
         }
+
+        .skip-to-content-link {
+            position: absolute;
+            left: 50%;
+            display: inline-block;
+            padding: 8px;
+            transform: translateY(-100%);
+            transition: transform 0.3s;
+        }
+
+        .skip-to-content-link:focus {
+            transform: translateY(0%);
+        }
     </style>
 
 <!-- Start BounceX tag. Deploy at the beginning of document head. -->
@@ -78,6 +91,10 @@
 </head>
 
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
+    <a class="skip-to-content-link bg-gray-100" href="#begin-content">
+        Skip to content
+    </a>
 
     <!--Nav-->
     <nav id="header" class="w-full z-30 top-0 py-1">
@@ -130,7 +147,7 @@
         </div>
     </nav>
 
-    <div class="carousel relative container mx-auto" style="max-width:1600px;">
+    <div id="begin-content" class="carousel relative container mx-auto" style="max-width:1600px;">
         <div class="carousel-inner relative overflow-hidden w-full">
             <!--Slide 1-->
             <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
